@@ -1,0 +1,18 @@
+div{
+  width:20%;
+  float:left;
+  text-align: center;
+}
+li{
+  display:block;
+  float:left;
+  width:55px;
+}
+h1{
+  font-size: 200px;
+  text-align: center;
+}
+li:hover{
+  background-color: rgba(0,0,0,0.1);
+  cursor:default;
+}
