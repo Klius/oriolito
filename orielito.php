@@ -28,7 +28,7 @@
 <script>
 	function showBig(element){
 		document.getElementById("titulo").innerText = element.innerText;
-		responsiveVoice.speak(element.innerText);
+		responsiveVoice.speak(element.innerText,"Spanish Female");
 	}
 </script>
 </body>
