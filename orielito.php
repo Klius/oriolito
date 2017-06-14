@@ -4,7 +4,7 @@
 	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 </head>
 <body>
-	<h1 id="titulo" onclick="responsiveVoice.speak(this.innerText);">Oriel</h1>
+	<h1 id="titulo" onclick="responsiveVoice.speak(this.innerText,'Spanish Female');">Oriel</h1>
 <?php
 	$oriel = "oriel";
 	$letras = ["a","e","i","o","u"];
