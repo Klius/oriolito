@@ -1,5 +1,6 @@
 function vowelCombination(word){
 			wordWithoutVowel = "";
+			results = [];
 			for (i=0;i<word.length;i++){
 				if((word[i]=="a") || (word[i]=="e") || (word[i]=="i") || (word[i]=="o") || (word[i]=="u")){
 					wordWithoutVowel += "#";
@@ -11,7 +12,7 @@ function vowelCombination(word){
 			console.log(wordWithoutVowel);
 			getResult(wordWithoutVowel);
 			trimResults();
-			console.log(results);
+			return results;
 		}
 		function trimResults(){
 			cleanResults = [];
@@ -41,4 +42,3 @@ function vowelCombination(word){
 				}
 			}
 		}
-		vowelCombination("oriel");
