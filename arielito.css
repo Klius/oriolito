@@ -1,4 +1,4 @@
-div{
+.col{
   width:20%;
   float:left;
   text-align: center;
@@ -6,7 +6,7 @@ div{
 li{
   display:block;
   float:left;
-  width:55px;
+  padding:5px;
 }
 h1{
   font-size: 200px;

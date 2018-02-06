@@ -7,6 +7,7 @@
 <body>
 	<h1 id="titulo" onclick="responsiveVoice.speak(this.innerText,'Spanish Female');">Oriel</h1>
 	<center><input id="word" placeholder="Write a name here" style="" type="text" oninput="changeWords(this)"></center>
+	<div id="combinations" class="">
 <?php
 	$oriel = "oriel";
 	$letras = ["a","e","i","o","u"];
@@ -27,6 +28,7 @@
 		print('</div>');
 	}
 ?>
+</div>
 <script>
 	function showBig(element){
 		document.getElementById("titulo").innerText = element.innerText == "" ? element.value : element.innerText ;
@@ -35,10 +37,35 @@
 	function changeWords(element){
 		element.value = element.value != "" ? element.value : "Oriel";
 		showBig(element);
-		combinations = vowelCombination(element.value);
+		combinations = vowelCombination(element.value.toLowerCase());
 		updateList(combinations);
 	}
 	function updateList(combinatorix){
+		combinationsDiv = document.getElementById("combinations");
+		maxWordsOnCol = combinatorix.length / 5;
+		cols = "";
+		j = 0;
+		vi = 0;
+		col = "";
+		for (i=0;i<combinatorix.length; i++){
+			if (j >= maxWordsOnCol){
+				j=0;
+				col += '</ul></div>';
+				cols += col;
+				vi++;
+			}
+			if( j == 0)
+			{
+				col = '<div class="col"><h2>'+vowels[vi].toUpperCase()+'</h2><ul>';
+			}
+			col += '<li onmouseover="showBig(this)" >'+combinatorix[i]+'</li>';
+			console.log(combinatorix[i]);
+			j++;
+		}
+		cols += col;
+		// clean the div
+		combinationsDiv.innerHTML = cols;
+		
 		
 	}
 </script>
