@@ -35,10 +35,11 @@
 		responsiveVoice.speak(element.innerText,"Spanish Female");
 	}
 	function changeWords(element){
-		element.value = element.value != "" ? element.value : "Oriel";
+		if (element.value != ""){
 		showBig(element);
 		combinations = vowelCombination(element.value.toLowerCase());
 		updateList(combinations);
+                }
 	}
 	function updateList(combinatorix){
 		combinationsDiv = document.getElementById("combinations");
