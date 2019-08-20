@@ -1,3 +1,9 @@
+vowels = ["a","e","i","o","u"];
+results = [];
+self.addEventListener('message', function(e) {
+	var message = vowelCombination(e.data.toLowerCase());
+	this.self.postMessage(message);
+});
 function vowelCombination(word){
 			wordWithoutVowel = "";
 			results = [];
@@ -9,7 +15,7 @@ function vowelCombination(word){
 					wordWithoutVowel += word[i];
 				}
 			}
-			console.log(wordWithoutVowel);
+			//console.log(wordWithoutVowel);
 			getResult(wordWithoutVowel);
 			trimResults();
 			return results;
@@ -23,8 +29,7 @@ function vowelCombination(word){
 			}
 			results = cleanResults;
 		}
-		vowels = ["a","e","i","o","u"];
-		results = [];
+
 		function getResult(refString, currentString){
 			
 			if(currentString === undefined){
